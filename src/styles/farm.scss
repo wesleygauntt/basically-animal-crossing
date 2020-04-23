@@ -1,0 +1,32 @@
+.farm {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  position: absolute;
+  pointer-events: none;
+
+  .grove {
+    width: 100%;
+    overflow-x: scroll;
+    display: flex;
+
+    div {
+      background-size: cover;
+      width: 113px;
+      height: 130px;
+    }
+  }
+}
+
+.apple-tree {
+  background-image: url("../images/apple-tree.png");
+}
+.orange-tree {
+  background-image: url("../images/orange-tree.png");
+}
+.pear-tree {
+  background-image: url("../images/pear-tree.png");
+}
+.peach-tree {
+  background-image: url("../images/peach-tree.png");
+}

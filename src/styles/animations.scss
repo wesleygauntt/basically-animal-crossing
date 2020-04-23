@@ -1,0 +1,48 @@
+@keyframes fallingItems {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0vh) rotateZ(0deg);
+  }
+  75% {
+    opacity: 1;
+    transform: translate(100px, 75vh) rotateZ(270deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(150px, 100vh) rotateZ(360deg);
+  }
+}
+
+.fallingItems span:nth-child(5n+5) {
+  animation-delay: 1s;
+}
+.fallingItems span:nth-child(3n+2) {
+  animation-delay: 1.5s;
+}
+
+.fallingItems span:nth-child(2n+5) {
+  animation-delay: 1.7s;
+}
+
+.fallingItems span {
+  display: inline-block;
+  width: 30px;
+  height: 45px;
+  margin: -280px 40px 54px -34px;
+  animation: fallingItems 10s infinite linear;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+}
+
+.fallingItems{
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  
+  .apple { background: url('../images/apple-icon.png'); }
+  .peach { background: url('../images/peach-icon.png'); }
+  .pear { background: url('../images/pear-icon.png'); }
+  .orange { background: url('../images/orange-icon.png'); }
+  .cherry { background: url('../images/cherry-icon.png'); }
+} 

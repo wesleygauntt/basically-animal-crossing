@@ -1,0 +1,75 @@
+@import 'styles/animations';
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+
+  background-image: url("./images/leaf-background.png");
+  background-size: cover;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.toggle-store {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+@keyframes pulseAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.bell-count-container {
+  position: absolute;
+  top: 50px;
+}
+
+.bell-count-container .money-bag {
+  background-image: url("./images/bag-of-bells.png");
+  background-size: contain;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+.pulse-animation {
+  animation:  pulseAnimation 1s ease-in-out 1s infinite;
+}
+
+.bell-count-container .bell-count {
+  background-color: #BCA746;
+  border: 3px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px 10px 10px;
+  font-weight: 600;
+  text-align: center;
+  z-index: 0;
+}
