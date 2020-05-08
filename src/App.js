@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 import Store from './components/Store';
 import Farm from './components/Farm';
+import StoryLine from './components/StoryLine';
 
 class App extends React.Component {
 
@@ -13,11 +14,13 @@ class App extends React.Component {
     this.setInventory = this.setInventory.bind(this);
     this.setUpgrades = this.setUpgrades.bind(this);
     this.toggleStoreVisibility = this.toggleStoreVisibility.bind(this);
+    this.toggleStoryLineVisibility = this.toggleStoryLineVisibility.bind(this);
     this.storeVisible = false;
     this.state = {
       bells: 0,
       inventory: [],
-      upgrades: []
+      upgrades: [],
+      storylineVisible: true
     }
   }
 
@@ -74,7 +77,7 @@ class App extends React.Component {
     Calculates power per click
   */
   getClickPower(){
-    let clickPower = 1;
+    let clickPower = 500;
 
     this.state.upgrades.forEach(item => {
       clickPower += (item.clickIncrease * item.owned);
@@ -108,6 +111,10 @@ class App extends React.Component {
     this.setState({storeVisible: !this.state.storeVisible});
   }
 
+  toggleStoryLineVisibility(){
+    this.setState({storylineVisible: !this.state.storylineVisible});
+  }
+
   renderGrove(item){
 
     console.log("Item: ", item);
@@ -139,6 +146,8 @@ class App extends React.Component {
         </div>
         */ }
 
+        <StoryLine toggleStoryLineVisibility={this.toggleStoryLineVisibility} classNames={ this.state.storylineVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} />
+
         <Farm inventory={this.state.inventory} />
 
         <div className="bell-count-container">
@@ -156,6 +165,10 @@ class App extends React.Component {
 
         <button className="toggle-store" onClick={this.toggleStoreVisibility}>
           {this.state.storeVisible ? 'Close' : 'Open'} Store
+        </button>
+
+        <button className="toggle-storyline" onClick={this.toggleStoryLineVisibility}>
+          {this.state.storylineVisible ? 'Close' : 'Open'} Story
         </button>
 
         <Store classNames={ this.state.storeVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} setInventory={this.setInventory} setUpgrades={this.setUpgrades} />

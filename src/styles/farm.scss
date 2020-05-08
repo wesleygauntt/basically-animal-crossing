@@ -5,17 +5,41 @@
   position: absolute;
   pointer-events: none;
 
-  .grove {
-    width: 100%;
-    overflow-x: scroll;
-    display: flex;
+  .resource-row {
+    border: 10px solid transparent;
+    padding: 15px;
+    border-image: url('../images/textured-background.png') 30 stretch;
+    background-color: rgba(0,0,0,0.8);
+    box-shadow: 10px 0;
 
-    div {
-      background-size: cover;
-      width: 113px;
-      height: 130px;
+    .item-container {
+      width: 100%;
+      overflow-x: scroll;
+      display: flex;
+
+      :first-child {
+          margin-left: 0;
+      }
+
+      div {
+        background-size: cover;
+        width: 113px;
+        height: 130px;
+        margin-left: -60px;
+      }
+    }
+
+    .description {
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: left;
+      padding: 5px 10px 5px 10px;
+      font-size: 14px;
+      margin-top: -15px;
+      position: relative;
     }
   }
+
+  
 }
 
 .apple-tree {

@@ -13,13 +13,16 @@ class Farm extends React.Component {
     let grove = [];
 
     if(item.owned > 0){
+
+      const description = `You currently have ${item.owned}, Producing ${item.owned * item.profit} bells/s`;
+
       let n = 0;
       while (n < item.owned) {
         grove.push(<div className={item.name}></div>)
         n++;
       }
 
-      return <div className={item.name + '-grove grove'}>{grove}</div>;
+      return <div className={item.name + 's resource-row'}><div className="item-container">{grove}</div><div className='description'>{description}</div></div>;
     } else {
       return "";
     }
