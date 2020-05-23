@@ -1,0 +1,58 @@
+$purple: #C192F2;
+$blue: #8595E3;
+$wheat: #F6CD64;
+$salmon: #E59366;
+$green: #88C78A;
+$phonebackground: #F7F4E6;
+$brown: #574f44;
+$lightbrown: #aca99e;
+
+#nook-phone {
+	background-color: $phonebackground;
+	border-radius: 50px;
+
+	min-height: 450px;
+	min-width: 200px;
+	border-radius: 50px;
+	padding: 30px;
+	position: fixed;
+	top: 2.5%;
+	right: 2.5%;
+
+	.header {
+		width: 100%;
+		text-align: center;
+		font-size: 36px;
+		color: $brown;
+		margin-top: 10px;
+	}
+
+	.sub-header {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: $lightbrown;
+	}
+
+	.content {
+	    overflow: hidden scroll;
+   		height: 75vh;
+	}
+
+	.apps {
+		.wrapper{
+			display: flex;
+			align-items: center;
+			padding-top: 30px;
+		}
+
+		.app {
+			height: 75px;
+			width: 75px;
+			background-color: wheat;
+			border-radius: 25px;
+			margin: 10px;
+		}
+	}
+}

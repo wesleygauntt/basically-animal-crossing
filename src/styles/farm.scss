@@ -1,9 +1,5 @@
 .farm {
-  height: 100vh;
-  width: 100vw;
-  overflow-y: scroll;
-  position: absolute;
-  pointer-events: none;
+  width: 100%;
 
   .resource-row {
     border: 10px solid transparent;

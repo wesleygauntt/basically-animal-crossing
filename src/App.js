@@ -135,8 +135,48 @@ class App extends React.Component {
   }
 
   render() {
-    return <div className="App">
-      <header className="App-header">
+    return <div id="App">
+      <div id="grove-container">
+        <Farm inventory={this.state.inventory} />
+      </div>
+
+      <StoryLine toggleStoryLineVisibility={this.toggleStoryLineVisibility} classNames={ this.state.storylineVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} />
+
+        
+
+        <div id="nook-phone" className={this.state.storylineVisible ? 'd-none' : ''}>
+          <div className="sub-header">
+            <div>123</div>
+            <div>xx:xx</div>
+            <div>123</div>
+          </div>
+
+          <div className="header">
+            Bells: {this.state.bells.toFixed(2)}
+          </div>
+
+          <div className="content">
+
+            <Store classNames={ this.state.storeVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} setInventory={this.setInventory} setUpgrades={this.setUpgrades} closeStore={this.toggleStoreVisibility} />
+
+            <div className={this.state.storeVisible || this.state.storylineVisible ? 'd-none' : 'apps'}>
+              <div className="wrapper">
+                <button className="app toggle-store" onClick={this.toggleStoreVisibility}>
+                  {this.state.storeVisible ? 'Close' : 'Open'} Store
+                </button>
+
+                <button className="app toggle-storyline" onClick={this.toggleStoryLineVisibility}>
+                  {this.state.storylineVisible ? 'Close' : 'Open'} Story
+                </button>
+
+                <button className="app" onClick={this.handleClick}>
+                  Click me
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 
         { /*
         <div class="fallingItems">
@@ -145,35 +185,6 @@ class App extends React.Component {
          <span className="orange"></span>
         </div>
         */ }
-
-        <StoryLine toggleStoryLineVisibility={this.toggleStoryLineVisibility} classNames={ this.state.storylineVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} />
-
-        <Farm inventory={this.state.inventory} />
-
-        <div className="bell-count-container">
-          <div className="money-bag">
-          </div>
-
-          <div className="bell-count">
-            {this.state.bells.toFixed(2)}
-          </div>
-        </div>
-
-        <button onClick={this.handleClick}>
-          Click me
-        </button>
-
-        <button className="toggle-store" onClick={this.toggleStoreVisibility}>
-          {this.state.storeVisible ? 'Close' : 'Open'} Store
-        </button>
-
-        <button className="toggle-storyline" onClick={this.toggleStoryLineVisibility}>
-          {this.state.storylineVisible ? 'Close' : 'Open'} Story
-        </button>
-
-        <Store classNames={ this.state.storeVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} setInventory={this.setInventory} setUpgrades={this.setUpgrades} />
-
-      </header>
     </div>
   }
 }

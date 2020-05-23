@@ -82,6 +82,10 @@ class Store extends React.Component {
   render () {
     return <div className={this.props.classNames + ' store'}>
 
+      <div className="store-header">
+        <button onClick={this.props.closeStore}>Close Store</button>
+      </div>
+
       <div className="passive-items">
         <div className="title">Crops and Critters</div>
         <div className="items">
