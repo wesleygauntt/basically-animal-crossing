@@ -38,6 +38,10 @@ $lightbrown: #aca99e;
 	.content {
 	    overflow: hidden scroll;
    		height: 75vh;
+
+		&::-webkit-scrollbar {
+	      display: none;
+	    }
 	}
 
 	.apps {

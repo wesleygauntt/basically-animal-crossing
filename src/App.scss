@@ -9,8 +9,15 @@
   font-size: calc(10px + 2vmin);
   color: white;
 
-  background-image: url("./images/leaf-background.png");
+
   background-size: cover;
+}
+
+#App {
+  background-image: url('./images/backgrounds/hero-bg-desktop.jpg');
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
 }
 
 .App-link {

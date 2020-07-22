@@ -1,12 +1,21 @@
 .farm {
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   width: 100%;
 
   .resource-row {
-    border: 10px solid transparent;
     padding: 15px;
-    border-image: url('../images/textured-background.png') 30 stretch;
     background-color: rgba(0,0,0,0.8);
     box-shadow: 10px 0;
+    border: 5px solid red;
+    border-top: 0px solid transparent;
+
+    &:first-child {
+      border-top: 5px solid red;
+    }
 
     .item-container {
       width: 100%;
@@ -18,10 +27,11 @@
       }
 
       div {
-        background-size: cover;
-        width: 113px;
-        height: 130px;
-        margin-left: -60px;
+        background-size: contain;
+        width: 65px;
+        height: 78px;
+        margin-left: -44px;
+        background-repeat: no-repeat;
       }
     }
 
@@ -32,6 +42,7 @@
       font-size: 14px;
       margin-top: -15px;
       position: relative;
+      color: white;
     }
   }
 

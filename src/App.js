@@ -151,11 +151,11 @@ class App extends React.Component {
             <div>123</div>
           </div>
 
-          <div className="header">
-            Bells: {this.state.bells.toFixed(2)}
-          </div>
-
           <div className="content">
+
+            <div className="header">
+              Bells: {this.state.bells.toFixed(2)}
+            </div>
 
             <Store classNames={ this.state.storeVisible ? '' : 'd-none'} bells={this.state.bells} deductBells={this.deductBells} setInventory={this.setInventory} setUpgrades={this.setUpgrades} closeStore={this.toggleStoreVisibility} />
 

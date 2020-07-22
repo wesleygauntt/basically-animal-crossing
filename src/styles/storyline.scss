@@ -1,9 +1,16 @@
 .storyline-wrapper {
-  height: 80vh;
-  background-color: blue;
-  width: 70vw;
+  background: url('../images/backgrounds/facebook-speechbubble_2x.png');
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding: 25px;
+  width: 36%;
+  height: 18%;
+
+  h6 {
+  	margin: 0;
+  }
 }
